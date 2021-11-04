@@ -1,0 +1,22 @@
+{
+  "generator-template-ui5-project": {
+    "projectname": "CoinsJsonGenerator",
+    "namespaceUI5": "com.famicet",
+    "platform": "Static webserver",
+    "viewtype": "XML",
+    "ui5libs": "Local resources (OpenUI5)",
+    "newdir": true,
+    "codeassist": true,
+    "namespaceURI": "com/famicet",
+    "opa5pos": [
+      "Main"
+    ],
+    "opa5Journeys": [
+      "Main"
+    ],
+    "uimodules": [
+      "uimodule"
+    ],
+    "setupCompleted": true
+  }
+}

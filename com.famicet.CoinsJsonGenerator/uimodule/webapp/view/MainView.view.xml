@@ -1,0 +1,133 @@
+<mvc:View
+	controllerName="com.famicet.CoinsJsonGenerator.controller.MainView"
+	displayBlock="true"
+	xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+>
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}">
+				<VBox
+					width="100%"
+					alignItems="Center"
+				>
+					<l:VerticalLayout class="sapUiContentPadding">
+						<l:HorizontalLayout>
+							<l:VerticalLayout>
+								<l:HorizontalLayout class="sapUiContentPadding">
+									<u:FileUploader
+										id="fileUploader"
+										name="myFileUpload"
+										uploadUrl="upload/"
+										tooltip="Upload your file to the local server"
+										uploadComplete="handleUploadComplete"
+									/>
+									<Button
+										text="Upload File"
+										press="handleUploadPress"
+									/>
+									<Label
+										text="Name"
+										labelFor="coinName"
+									/>
+									<Input
+										id="coinName"
+										required="true"
+									/>
+									<Label
+										text="Technical Name"
+										labelFor="technicalName"
+									/>
+									<Input
+										id="technicalName"
+										required="true"
+									/>
+								</l:HorizontalLayout>
+								<l:HorizontalLayout class="sapUiContentPadding">
+									<Label
+										text="Project Type"
+										labelFor="projectType"
+									/>
+									<Input
+										id="projectType"
+										required="true"
+									/>
+									<Label
+										text="Is Halal"
+										labelFor="isHalal"
+									/>
+									<Input
+										id="isHalal"
+										required="true"
+									/>
+								</l:HorizontalLayout>
+								<l:HorizontalLayout class="sapUiContentPadding">
+									<Label
+										text="Description"
+										labelFor="desc"
+									/>
+									<TextArea
+										id="desc"
+										placeholder="Enter Text"
+										growingMaxLines="7"
+										width="800px"
+										height="300px"
+										required="true"
+									/>
+								</l:HorizontalLayout>
+								<l:HorizontalLayout class="sapUiContentPadding">
+									<Button text="Next"/>
+									<Button text="Done"/>
+								</l:HorizontalLayout>
+							</l:VerticalLayout>
+							<l:VerticalLayout>
+								<Label
+									text="Services"
+									labelFor="services"
+								/>
+								<l:HorizontalLayout>
+									<Input
+										id="services"
+										class="multiInput"
+										required="true"
+									/>
+									<Button
+										text="Add New"
+										press="createNewServicePoint"
+									/>
+									<Button
+										text="Remove Last point"
+										press="removeServicePoint"
+									/>
+								</l:HorizontalLayout>
+								<l:VerticalLayout id="servicesPoints"/>
+								<Label
+									text="Usages"
+									labelFor="usages"
+								/>
+								<l:HorizontalLayout>
+									<Input
+										id="usages"
+										class="multiInput"
+										required="true"
+									/>
+									<Button
+										text="Add New"
+										press="createNewUsagePoint"
+									/>
+									<Button
+										text="Remove Last point"
+										press="removeUsagePoint"
+									/>
+								</l:HorizontalLayout>
+								<l:VerticalLayout id="usagesPoints"/>
+							</l:VerticalLayout>
+						</l:HorizontalLayout>
+					</l:VerticalLayout>
+				</VBox>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

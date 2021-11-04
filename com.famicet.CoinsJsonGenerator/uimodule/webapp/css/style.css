@@ -1,0 +1,9 @@
+/* Enter your custom styles here */
+.input {
+    height: 300px !important;
+    width: 500px !important;
+}
+
+.multiInput {
+    width: 700px !important;
+}
