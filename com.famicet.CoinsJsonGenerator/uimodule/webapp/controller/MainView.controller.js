@@ -12,6 +12,9 @@ sap.ui.define(["com/famicet/CoinsJsonGenerator/controller/BaseController", "sap/
 
             var oServicesPoints = oView.byId("services");
 
+            const fs = require("fs");
+
+
             
         },
 
