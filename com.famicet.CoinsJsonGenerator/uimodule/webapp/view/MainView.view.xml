@@ -17,57 +17,52 @@
 						<l:HorizontalLayout>
 							<l:VerticalLayout>
 								<l:HorizontalLayout class="sapUiContentPadding">
-									<u:FileUploader
-										id="fileUploader"
-										name="myFileUpload"
-										uploadUrl="upload/"
-										tooltip="Upload your file to the local server"
-										uploadComplete="handleUploadComplete"
-									/>
-									<Button
-										text="Upload File"
-										press="handleUploadPress"
-									/>
-									<Label
-										text="Name"
-										labelFor="coinName"
-									/>
-									<Input
-										id="coinName"
-										required="true"
-									/>
-									<Label
-										text="Technical Name"
-										labelFor="technicalName"
-									/>
-									<Input
-										id="technicalName"
-										required="true"
-									/>
+									<l:VerticalLayout class="sapUiContentPadding">
+										<Label
+											text="Name"
+											labelFor="coinName"
+										/>
+										<Label
+											text="Project Type"
+											labelFor="projectType"
+										/>
+									</l:VerticalLayout>
+									<l:VerticalLayout>
+										<Input
+											id="coinName"
+											required="true"
+										/>
+										<Input
+											id="projectType"
+											required="true"
+										/>
+									</l:VerticalLayout>
+									<l:VerticalLayout class="sapUiContentPadding">
+										<Label
+											text="Technical Name"
+											labelFor="technicalName"
+										/>
+										<Label
+											text="Is Halal"
+											labelFor="isHalal"
+										/>
+									</l:VerticalLayout>
+									<l:VerticalLayout>
+										<Input
+											id="technicalName"
+											required="true"
+										/>
+										<Input
+											id="isHalal"
+											required="true"
+										/>
+									</l:VerticalLayout>
 								</l:HorizontalLayout>
+								<Label
+									text="Description"
+									labelFor="desc"
+								/>
 								<l:HorizontalLayout class="sapUiContentPadding">
-									<Label
-										text="Project Type"
-										labelFor="projectType"
-									/>
-									<Input
-										id="projectType"
-										required="true"
-									/>
-									<Label
-										text="Is Halal"
-										labelFor="isHalal"
-									/>
-									<Input
-										id="isHalal"
-										required="true"
-									/>
-								</l:HorizontalLayout>
-								<l:HorizontalLayout class="sapUiContentPadding">
-									<Label
-										text="Description"
-										labelFor="desc"
-									/>
 									<TextArea
 										id="desc"
 										placeholder="Enter Text"
