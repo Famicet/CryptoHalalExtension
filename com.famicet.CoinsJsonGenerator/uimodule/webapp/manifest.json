@@ -8,7 +8,13 @@
       "version": "1.0.0"
     },
     "title": "{{appTitle}}",
-    "description": "{{appDescription}}"
+    "description": "{{appDescription}}",
+    "dataSources": {
+      "coinsJson": {
+          "uri": "controller/Coins.json",
+          "type": "JSON"
+      }
+  }
   },
   "sap.ui": {
     "technology": "UI5",

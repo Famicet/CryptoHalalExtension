@@ -73,18 +73,18 @@
 									/>
 								</l:HorizontalLayout>
 								<l:HorizontalLayout class="sapUiContentPadding">
-									<Button text="Next"/>
-									<Button text="Done"/>
+									<Button text="Next" press="addCurrentDataSet"/>
+									<Button text="Done" press="exportResult"/>
 								</l:HorizontalLayout>
 							</l:VerticalLayout>
 							<l:VerticalLayout>
 								<Label
 									text="Services"
-									labelFor="services"
+									labelFor="service"
 								/>
 								<l:HorizontalLayout>
 									<Input
-										id="services"
+										id="service"
 										class="multiInput"
 										required="true"
 									/>
@@ -100,11 +100,11 @@
 								<l:VerticalLayout id="servicesPoints"/>
 								<Label
 									text="Usages"
-									labelFor="usages"
+									labelFor="usage"
 								/>
 								<l:HorizontalLayout>
 									<Input
-										id="usages"
+										id="usage"
 										class="multiInput"
 										required="true"
 									/>
