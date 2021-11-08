@@ -17,6 +17,22 @@
 						<l:HorizontalLayout>
 							<l:VerticalLayout>
 								<l:HorizontalLayout class="sapUiContentPadding">
+									<u:FileUploader
+										id="fileUploader"
+										name="myFileUpload"
+										uploadUrl="upload/"
+										tooltip="Upload your file to the local server"
+										uploadComplete="handleUploadComplete"
+									/>
+									<Button
+										text="Upload File"
+										press="handleUploadPress"
+									/>
+									<Label text="Status: " id="status"/>
+									<ToggleButton icon="sap-icon://world" press="changeLanguage"/>
+									<Label text="English " id="language"/>
+								</l:HorizontalLayout>
+								<l:HorizontalLayout class="sapUiContentPadding">
 									<l:VerticalLayout class="sapUiContentPadding">
 										<Label
 											text="Name"
@@ -67,14 +83,20 @@
 										id="desc"
 										placeholder="Enter Text"
 										growingMaxLines="7"
-										width="800px"
+										width="650px"
 										height="300px"
 										required="true"
 									/>
 								</l:HorizontalLayout>
 								<l:HorizontalLayout class="sapUiContentPadding">
-									<Button text="Next" press="addCurrentDataSet"/>
-									<Button text="Done" press="exportResult"/>
+									<Button
+										text="Next"
+										press="addCurrentDataSet"
+									/>
+									<Button
+										text="Done"
+										press="exportResult"
+									/>
 								</l:HorizontalLayout>
 							</l:VerticalLayout>
 							<l:VerticalLayout>

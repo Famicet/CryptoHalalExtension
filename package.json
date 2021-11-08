@@ -1,0 +1,26 @@
+{
+  "name": "cryptohalalextension-",
+  "productName": "CHExtension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=icons/appc.png --prune=true --out=release-builds",
+    "package-win": "electron-packager . CryptoHalalExtension- --overwrite --asar=true --platform=win32 --arch=ia32 --icon=icons/appc.png --prune=true --out=release-builds  --version-string.FileDescription=CE --version-string.ProductName=\"CHExtension\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Famicet/CryptoHalalExtension.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Famicet/CryptoHalalExtension/issues"
+  },
+  "homepage": "https://github.com/Famicet/CryptoHalalExtension#readme",
+  "devDependencies": {
+    "electron": "^15.3.0",
+    "electron-packager": "^15.4.0"
+  }
+}

@@ -7,10 +7,10 @@ sap.ui.define(["com/famicet/CoinsJsonGenerator/controller/BaseController", "sap/
     var localData;
 
     var oView;
+    
+    var language;
 
-    var temporarySetOfObjects = new sap.ui.model.json.JSONModel();
-    var tempObject = new sap.ui.model.json.JSONModel();
-
+    var uploaded = false;
 
     return Controller.extend("com.famicet.CoinsJsonGenerator.controller.MainView", {
         /**
@@ -18,20 +18,13 @@ sap.ui.define(["com/famicet/CoinsJsonGenerator/controller/BaseController", "sap/
          */
         onInit: function () {
             oView = this.getView();
+            language = "Arabic";
 
-            var datajson = {
-                "name": "hello",
-                "type": "something"
-            }
-
-            originalData.loadData("data/Coins.json", "", false)
+            originalData.loadData("data/ArabicCoins.json", "", false)
 
             localData = originalData.getData();
 
-            
-
-
-
+            oView.byId("language").setText("عربي");
         },
 
         createNewServicePoint: function (oEvent) {
@@ -64,46 +57,49 @@ sap.ui.define(["com/famicet/CoinsJsonGenerator/controller/BaseController", "sap/
             newDataJson.loadData("data/Coin.json", "", false);
             var newDataSet = newDataJson.getData();
 
-            newDataSet.name = oView.byId("coinName").getValue();
-            newDataSet.technicalName = oView.byId("technicalName").getValue();
-            newDataSet.image = "Images/" + oView.byId("technicalName").getValue() + ".png";
-            newDataSet.projectType = oView.byId("projectType").getValue();
-            newDataSet.desc = oView.byId("desc").getValue();
-            newDataSet.isHalal = oView.byId("isHalal").getValue();
+            newDataSet.name = removeNewLine(oView.byId("coinName").getValue());
+            newDataSet.technicalName = removeNewLine(oView.byId("technicalName").getValue());
+            newDataSet.image = removeNewLine("Images/" + oView.byId("technicalName").getValue() + ".png");
+            newDataSet.projectType = removeNewLine(oView.byId("projectType").getValue());
+            newDataSet.desc = removeNewLine(oView.byId("desc").getValue());
+            newDataSet.isHalal = removeNewLine(oView.byId("isHalal").getValue());
+
+            removeNewLine("dsadsa")
 
             //Adding Services
             var newServicePoint = { "point": "" };
-            newServicePoint.point = oView.byId("service").getValue();
+            newServicePoint.point = removeNewLine(oView.byId("service").getValue());
             newDataSet.services.push(newServicePoint);
             var services = oView.byId("servicesPoints").getContent();
             services.forEach(element => {
                 var newServicePoint2 = { "point": "" };
-                newServicePoint2.point = element.getValue();
+                newServicePoint2.point = removeNewLine(element.getValue());
                 newDataSet.services.push(newServicePoint2);
             });
 
             //Adding Usages
             var newUsagePoint = { "point": "" };
-            newUsagePoint.point = oView.byId("usage").getValue();
+            newUsagePoint.point = removeNewLine(oView.byId("usage").getValue());
             newDataSet.usages.push(newUsagePoint);
             var usages = oView.byId("usagesPoints").getContent();
             usages.forEach(element => {
                 var newUsagePoint2 = { "point": "" };
-                newUsagePoint2.point = element.getValue();
+                newUsagePoint2.point = removeNewLine(element.getValue());
                 newDataSet.usages.push(newUsagePoint2);
             });
             
             localData.coins.push(newDataSet);
             
-            oView.byId("technicalName").getValue("");
+            oView.byId("technicalName").setValue("");
             oView.byId("coinName").setValue("");
-            oView.byId("projectType").getValue("");
-            oView.byId("desc").getValue("");
-            oView.byId("isHalal").getValue("");
-            oView.byId("service").getValue("");
-            oView.byId("usage").getValue("");
+            oView.byId("projectType").setValue("");
+            oView.byId("desc").setValue("");
+            oView.byId("isHalal").setValue("");
+            oView.byId("service").setValue("");
+            oView.byId("usage").setValue("");
 
-            //oView.byId("usagesPoints").getContent()
+            oView.byId("servicesPoints").destroyContent();
+            oView.byId("usagesPoints").destroyContent();
         },
 
 		exportResult: function(oEvent) {
@@ -121,11 +117,60 @@ sap.ui.define(["com/famicet/CoinsJsonGenerator/controller/BaseController", "sap/
                     window.URL.revokeObjectURL(url);
                 };
                 }());
-            saveData(localData, "Coins.json");
+            saveData(localData, language + "Coins.json");
+		},
+
+		handleUploadComplete: function(oEvent) {
+			
+		},
+
+		handleUploadPress: function(oEvent) {
+            
+			var fileUploader = oView.byId("fileUploader");
+            if(!fileUploader.getValue()){
+                console.log("Empty");
+                var status = oView.byId("status");
+                status.setText("Status: Not Uploaded!");
+                uploaded = false;
+            } else {
+                var file = fileUploader.getFocusDomRef().files[0];
+                console.log(file.type);
+                if(file && window.FileReader){
+                    var reader = new FileReader();
+                    console.log(reader.readAsDataURL(file));
+                    reader.onload = function(e) {
+                        var str = e.target.result;
+                        var data = new sap.ui.model.json.JSONModel(str);
+                        data.attachRequestCompleted(function(){
+                            console.log(data.getData());
+                            localData = data.getData();
+
+                            var status = oView.byId("status");
+                            status.setText("Status: Uploaded!");
+                            uploaded = true;
+                        })
+                    }
+                }
+            }
+            
+		},
+
+		changeLanguage: function(oEvent) {
+			if(!uploaded){
+                if(language == "Arabic"){
+                    language = "English";
+                    oView.byId("language").setText("English");
+                } else {
+                    language = "Arabic";
+    
+                    oView.byId("language").setText("عربي");
+                }
+            }
 		}
     });
 });
 
-
-
+function removeNewLine(text) {
+    return text.replace(/(\r\n|\n|\r)/gm," ");
+}
 

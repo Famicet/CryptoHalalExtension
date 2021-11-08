@@ -1,11 +1,13 @@
 {
-	"coins": [{
+	"coins": [
+		{
 			"name": "Aragon",
 			"technicalName": "ANT",
 			"image": "Images/ANT.png",
 			"projectType": "Project: service",
 			"desc": "It is an open source decentralized platform built on the Ethereum network, designed to create and manage Decentralized Applications(Dapps), Encrypted Protocols, and Decentralized Autonomous Organizations(DAOs). And that is through the arbitration of smart contracts between the parties.Companies can use Aragon to sign smart contract agreements with each other.It can then be stored securely on the blockchain so that any party can access it whenever they want to.The Aragon Network creates a decentralized settlement system that can be used to arbitrate quickly and effectively between interested parties. The Aragon Association is a non - profit entity based in Switzerland.He is the legal agent of the Aragon Project.It is responsible for managing the funds raised in the sale of ANT coin.",
-			"services": [{
+			"services": [
+				{
 					"point": "Allows decentralized organizations (DAOs) to be built on an open source infrastructure using plugins for governance."
 				},
 				{
@@ -15,7 +17,8 @@
 					"point": "Enables the community to manage capital assets and encrypted tokens and use them to participate in the community."
 				}
 			],
-			"usages": [{
+			"usages": [
+				{
 					"point": "It is used as collateral for the agreements made on the platform."
 				},
 				{
