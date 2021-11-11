@@ -64,6 +64,10 @@ sap.ui.define(["com/famicet/CoinsJsonGenerator/controller/BaseController", "sap/
             newDataSet.desc = removeNewLine(oView.byId("desc").getValue());
             newDataSet.isHalal = removeNewLine(oView.byId("isHalal").getValue());
             newDataSet.note = removeNewLine(oView.byId("Note").getValue());
+            newDataSet.servicesNoteLabel = removeNewLine(oView.byId("servicesNoteLabel").getValue());
+            newDataSet.servicesNote = removeNewLine(oView.byId("servicesNote").getValue());
+            newDataSet.usagesNoteLabel = removeNewLine(oView.byId("usagesNoteLabel").getValue());
+            newDataSet.usagesNote = removeNewLine(oView.byId("usagesNote").getValue());
 
             removeNewLine("dsadsa")
 
@@ -99,6 +103,10 @@ sap.ui.define(["com/famicet/CoinsJsonGenerator/controller/BaseController", "sap/
             oView.byId("Note").setValue("");
             oView.byId("service").setValue("");
             oView.byId("usage").setValue("");
+            oView.byId("servicesNoteLabel").setValue("");
+            oView.byId("servicesNote").setValue("");
+            oView.byId("usagesNoteLabel").setValue("");
+            oView.byId("usagesNote").setValue("");
 
             oView.byId("servicesPoints").destroyContent();
             oView.byId("usagesPoints").destroyContent();

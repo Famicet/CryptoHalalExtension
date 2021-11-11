@@ -17,6 +17,8 @@
 					"point": "Enables the community to manage capital assets and encrypted tokens and use them to participate in the community."
 				}
 			],
+			"servicesNoteLabel": "",
+			"servicesNote": "",
 			"usages": [
 				{
 					"point": "It is used as collateral for the agreements made on the platform."
@@ -31,6 +33,8 @@
 					"point": "Governance payment."
 				}
 			],
+			"usagesNoteLabel": "",
+			"usagesNote": "",
 			"isHalal": "Halal",
 			"note": ""
 		}

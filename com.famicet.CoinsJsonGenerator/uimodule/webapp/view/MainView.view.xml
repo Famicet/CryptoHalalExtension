@@ -142,6 +142,26 @@
 									/>
 								</l:HorizontalLayout>
 								<l:VerticalLayout id="servicesPoints"/>
+								<l:HorizontalLayout class="sapUiContentPadding">
+								<Label
+									text="Services Note Label"
+									labelFor="servicesNoteLabel"
+								/>
+								<Input
+										id="servicesNoteLabel"
+										class="multiInput"
+								/>
+								</l:HorizontalLayout>
+								<l:HorizontalLayout class="sapUiContentPadding">
+								<Label
+									text="Services Note"
+									labelFor="servicesNote"
+								/>
+								<Input
+										id="servicesNote"
+										class="multiInput"
+								/>
+								</l:HorizontalLayout>
 								<Label
 									text="Usages"
 									labelFor="usage"
@@ -162,6 +182,26 @@
 									/>
 								</l:HorizontalLayout>
 								<l:VerticalLayout id="usagesPoints"/>
+								<l:HorizontalLayout class="sapUiContentPadding">
+								<Label
+									text="Usages Note Label"
+									labelFor="usagesNoteLabel"
+								/>
+								<Input
+										id="usagesNoteLabel"
+										class="multiInput"
+								/>
+								</l:HorizontalLayout>
+								<l:HorizontalLayout class="sapUiContentPadding">
+								<Label
+									text="usages Note"
+									labelFor="usagesNote"
+								/>
+								<Input
+										id="usagesNote"
+										class="multiInput"
+								/>
+								</l:HorizontalLayout>
 							</l:VerticalLayout>
 						</l:HorizontalLayout>
 					</l:VerticalLayout>
