@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/Famicet/CryptoHalalExtension#readme",
   "devDependencies": {
-    "electron": "^15.3.0",
+    "electron": "^15.3.1",
     "electron-packager": "^15.4.0"
   }
 }

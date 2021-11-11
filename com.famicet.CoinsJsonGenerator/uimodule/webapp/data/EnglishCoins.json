@@ -31,7 +31,8 @@
 					"point": "Governance payment."
 				}
 			],
-			"isHalal": "Halal"
+			"isHalal": "Halal",
+			"note": ""
 		}
 	]
 }

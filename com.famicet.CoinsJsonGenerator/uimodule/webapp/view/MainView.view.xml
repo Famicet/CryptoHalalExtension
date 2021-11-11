@@ -13,7 +13,7 @@
 					width="100%"
 					alignItems="Center"
 				>
-					<l:VerticalLayout class="sapUiContentPadding">
+					<l:VerticalLayout >
 						<l:HorizontalLayout>
 							<l:VerticalLayout>
 								<l:HorizontalLayout class="sapUiContentPadding">
@@ -28,9 +28,18 @@
 										text="Upload File"
 										press="handleUploadPress"
 									/>
-									<Label text="Status: " id="status"/>
-									<ToggleButton icon="sap-icon://world" press="changeLanguage"/>
-									<Label text="English " id="language"/>
+									<Label
+										text="Status: "
+										id="status"
+									/>
+									<ToggleButton
+										icon="sap-icon://world"
+										press="changeLanguage"
+									/>
+									<Label
+										text="English "
+										id="language"
+									/>
 								</l:HorizontalLayout>
 								<l:HorizontalLayout class="sapUiContentPadding">
 									<l:VerticalLayout class="sapUiContentPadding">
@@ -74,20 +83,33 @@
 										/>
 									</l:VerticalLayout>
 								</l:HorizontalLayout>
-								<Label
-									text="Description"
-									labelFor="desc"
-								/>
-								<l:HorizontalLayout class="sapUiContentPadding">
-									<TextArea
-										id="desc"
-										placeholder="Enter Text"
-										growingMaxLines="7"
-										width="650px"
-										height="300px"
-										required="true"
+								<l:VerticalLayout >
+									<l:HorizontalLayout class="sapUiContentPadding">
+										<Label
+											text="Notes"
+											labelFor="Note"
+										/>
+										<Input
+											id="Note"
+											required="true"
+											width="600px"
+										/>
+									</l:HorizontalLayout>
+									<Label
+										text="Description"
+										labelFor="desc"
 									/>
-								</l:HorizontalLayout>
+									<l:HorizontalLayout class="sapUiContentPadding">
+										<TextArea
+											id="desc"
+											placeholder="Enter Text"
+											growingMaxLines="7"
+											width="650px"
+											height="300px"
+											required="true"
+										/>
+									</l:HorizontalLayout>
+								</l:VerticalLayout>
 								<l:HorizontalLayout class="sapUiContentPadding">
 									<Button
 										text="Next"

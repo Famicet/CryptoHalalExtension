@@ -30,7 +30,7 @@ sap.ui.define(["com/famicet/CoinsJsonGenerator/controller/BaseController", "sap/
         createNewServicePoint: function (oEvent) {
             servicePointId++;
             var input = new sap.m.Input("sPoint" + servicePointId);
-            input.setWidth("700px");
+            input.setWidth("500px");
             input.setRequired(true);
             oView.byId("servicesPoints").addContent(input);
         },
@@ -43,7 +43,7 @@ sap.ui.define(["com/famicet/CoinsJsonGenerator/controller/BaseController", "sap/
         createNewUsagePoint: function (oEvent) {
             usagePointId++;
             var input = new sap.m.Input("uPoint" + usagePointId);
-            input.setWidth("700px");
+            input.setWidth("500px");
             input.setRequired(true);
             oView.byId("usagesPoints").addContent(input);
         },
@@ -63,6 +63,7 @@ sap.ui.define(["com/famicet/CoinsJsonGenerator/controller/BaseController", "sap/
             newDataSet.projectType = removeNewLine(oView.byId("projectType").getValue());
             newDataSet.desc = removeNewLine(oView.byId("desc").getValue());
             newDataSet.isHalal = removeNewLine(oView.byId("isHalal").getValue());
+            newDataSet.note = removeNewLine(oView.byId("Note").getValue());
 
             removeNewLine("dsadsa")
 
@@ -95,6 +96,7 @@ sap.ui.define(["com/famicet/CoinsJsonGenerator/controller/BaseController", "sap/
             oView.byId("projectType").setValue("");
             oView.byId("desc").setValue("");
             oView.byId("isHalal").setValue("");
+            oView.byId("Note").setValue("");
             oView.byId("service").setValue("");
             oView.byId("usage").setValue("");
 
