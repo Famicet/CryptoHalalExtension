@@ -19,6 +19,9 @@ sap.ui.define(["com/famicet/CoinsJsonGenerator/controller/BaseController", "sap/
         onInit: function () {
             oView = this.getView();
             language = "Arabic";
+            var oModel = new sap.ui.model.json.JSONModel();
+            oModel.loadData("data/Halal.json");
+            oView.setModel(oModel);
 
             originalData.loadData("data/ArabicCoins.json", "", false)
 

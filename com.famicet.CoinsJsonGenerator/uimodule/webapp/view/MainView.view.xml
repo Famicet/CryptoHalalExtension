@@ -5,6 +5,7 @@
 	xmlns:u="sap.ui.unified"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
 >
 	<App id="idAppControl">
 		<pages>
@@ -13,7 +14,7 @@
 					width="100%"
 					alignItems="Center"
 				>
-					<l:VerticalLayout >
+					<l:VerticalLayout>
 						<l:HorizontalLayout>
 							<l:VerticalLayout>
 								<l:HorizontalLayout class="sapUiContentPadding">
@@ -77,13 +78,24 @@
 											id="technicalName"
 											required="true"
 										/>
-										<Input
+										<ComboBox
 											id="isHalal"
 											required="true"
-										/>
+											items="{
+												path: '/Judjment',
+												sorter: {
+													path: 'text'
+												}
+											}"
+										>
+											<core:Item
+												key="{key}"
+												text="{text}"
+											/>
+										</ComboBox>
 									</l:VerticalLayout>
 								</l:HorizontalLayout>
-								<l:VerticalLayout >
+								<l:VerticalLayout>
 									<l:HorizontalLayout class="sapUiContentPadding">
 										<Label
 											text="Notes"
@@ -143,24 +155,24 @@
 								</l:HorizontalLayout>
 								<l:VerticalLayout id="servicesPoints"/>
 								<l:HorizontalLayout class="sapUiContentPadding">
-								<Label
-									text="Services Note Label"
-									labelFor="servicesNoteLabel"
-								/>
-								<Input
+									<Label
+										text="Services Note Label"
+										labelFor="servicesNoteLabel"
+									/>
+									<Input
 										id="servicesNoteLabel"
 										class="multiInput"
-								/>
+									/>
 								</l:HorizontalLayout>
 								<l:HorizontalLayout class="sapUiContentPadding">
-								<Label
-									text="Services Note"
-									labelFor="servicesNote"
-								/>
-								<Input
+									<Label
+										text="Services Note"
+										labelFor="servicesNote"
+									/>
+									<Input
 										id="servicesNote"
 										class="multiInput"
-								/>
+									/>
 								</l:HorizontalLayout>
 								<Label
 									text="Usages"
@@ -183,24 +195,24 @@
 								</l:HorizontalLayout>
 								<l:VerticalLayout id="usagesPoints"/>
 								<l:HorizontalLayout class="sapUiContentPadding">
-								<Label
-									text="Usages Note Label"
-									labelFor="usagesNoteLabel"
-								/>
-								<Input
+									<Label
+										text="Usages Note Label"
+										labelFor="usagesNoteLabel"
+									/>
+									<Input
 										id="usagesNoteLabel"
 										class="multiInput"
-								/>
+									/>
 								</l:HorizontalLayout>
 								<l:HorizontalLayout class="sapUiContentPadding">
-								<Label
-									text="usages Note"
-									labelFor="usagesNote"
-								/>
-								<Input
+									<Label
+										text="usages Note"
+										labelFor="usagesNote"
+									/>
+									<Input
 										id="usagesNote"
 										class="multiInput"
-								/>
+									/>
 								</l:HorizontalLayout>
 							</l:VerticalLayout>
 						</l:HorizontalLayout>
